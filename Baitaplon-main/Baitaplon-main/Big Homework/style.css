@@ -1,24 +1,101 @@
 /* Basic Reset */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    line-height: 1.4;
+    scroll-snap-type: mandatory;
+}
+
+header img{
+    position: relative;
+    transition: 0.6;
 }
 
 header {
+    font-family: 'Oswald', sans-serif;
+    min-height: 550px;
     text-align: center;
-    background-color: #333;
-    background-image: url();
     color: #fff;
     padding: 1rem;
+    background-size: cover;
+    align-items: center;
+    background: #ffffff url(Images/pexels-linh-ngo-98931791-10179062.jpg) center center/cover no-repeat;
+    transition: 0.6s;
+    z-index: 1000000;
+    position: relative;
+    
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-h1{
+
+
+header ul li a{
+    font-size: 2.5em;
+    position: relative;
+    display: inline-block;
+    position:relative;
+    transition: 0.6s;
+    z-index: 1000000;
+}
+header .sticky{
+    padding: 5px 100px;
+    background: #fff;
+}
+
+header li a::before{
+    content: '';
+    position: absolute;
+    top: 110%;
+    left:0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+header li a:hover::before{
+    width: 100%;
+}
+
+nav li{
+    display: inline-block;
+    position:relative;
+}
+
+nav a {
+    position: relative;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-left: 70px;
+}
+
+
+header img{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 70px;
+}
+
+header .sticky ul li a{
+    color: #000;
+}
+
+.content h1{
     margin-top: 50px;
 }
 
@@ -26,26 +103,22 @@ h1{
     height: 0.2px;
     background-color: rgb(6, 6, 6);
 }
-hr{
+.content hr{
     height: 4px;
     background-color: rgb(6, 6, 6);
 }
 div .main{
     border: solid 1px;
 }
-p{
-    margin: 30px 0px;
-}
+
 .left{
-    
+    float:left;
     width: 20%;
     margin:25px 40px;
-    height: 700px;
     position: sticky;
-    scrollbar-width: none ;
-    overflow: scroll ;
     top: 20px;
-    
+    height: 100dvh;
+    min-width:  250px;
 }
 .left div{
     text-decoration: none;
@@ -66,18 +139,15 @@ a{
     float: right;
     margin: 20px;
     font-weight: 40px;
-    height: 700px;
+    height: 2700px;
     width: 20%;
     text-align: center;
-    overflow: scroll;
-    scrollbar-width: none; 
 }
 .right p:hover a{
     text-decoration: underline;
     height: 10px
 }
 .right p{
-    
     font-weight: 10;
     font-size: 14px;
     margin: 3px 0px;
@@ -136,9 +206,8 @@ border-radius: 10px;
     height: 1px;
 }
 .content{
-    margin-left: 400px ;
-    height: 700px;
-    scrollbar-width: none;
+    align-items:flex-start;
+    display: flow-root;
 }
 
 .content p{
@@ -146,7 +215,7 @@ border-radius: 10px;
     font-size: 20px;
     margin: 50px 0px;
 }
-h3{
+.content h3{
     margin-top:20px;
 }
 .content .top{
@@ -157,43 +226,6 @@ h3{
     border-radius: 10px;
     margin: 10px;
 }
-header img{
-    width: 200px;
-    height: 200px;
-}
-
-nav li .submenu {
-    display: none;
-    position: absolute;
-    padding-left: 0px;
-  }
-
-nav li:hover .submenu {
-    display: block;
-}
-nav {
-    text-align: center;
-    list-style: none;
-}
-nav li{
-    display: inline-block;
-    position:relative;
-}
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-    margin: 0px 100px;
-    font-size: 20px;
-}
-
-nav a:hover {
-    background-color: #555;
-    border-radius: 5px;
-    width: 300px;
-}
-
 .slider {
     position: relative;
     overflow: hidden;
